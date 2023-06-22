@@ -1,7 +1,7 @@
 from multiprocessing import context
 from django.shortcuts import render
 
-from main.models import Mol, Mt, Ot, Qoy, Quyon, Register, Tovuq, Tuya
+from main.models import  Mt, Register
 
 # Create your views here.
 def about (request):
@@ -32,23 +32,6 @@ def index (request):
     return render (request,"index.html")
 
 
-def menu (request):
-    data=Qoy.objects.all()
-    data1=Mol.objects.all()
-    data2=Tuya.objects.all()
-    data3=Quyon.objects.all()
-    data4=Tovuq.objects.all()
-    data5=Ot.objects.all()
-    context={
-        'data':data,
-        'data1':data1,
-        'data2':data2,
-        'data3':data3,
-        'data4':data4,
-        'data5':data5,
-        
-    }
-    return render (request,"menu.html",context)
 
 
 def news (request):
